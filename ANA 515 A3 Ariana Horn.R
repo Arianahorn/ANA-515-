@@ -51,5 +51,7 @@ head(state_merge)
 
 #creating plot y= number of storm events in 1994 and x= land area 
 library(ggplot2)
-ggplot(state_merge, aes(x = area, y = Freq, colour = region)) +
-  geom_point()
+storm_plot_by_state <- ggplot(state_merge, aes(x=area, y=Freq)) +
+  geom_point(aes(color=region)) +
+  labs(x = "Land area (square miles)", y = "# of storm events(1994)")
+storm_plot_by_state 
